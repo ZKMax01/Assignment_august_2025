@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  MainView.swift
 //  O2_Assignment
 //
 //  Created by ZKMax01 on 13/08/2025.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct MainView: View {
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -20,5 +20,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    MainView()
 }
