@@ -11,9 +11,10 @@ import Testing
 @Suite("VersionComparation")
 struct VersionComparationTests {
     @Test func greaterThan() {
-        #expect(VersionComparator.isGreater("6.24", than: "6.1"))
-        #expect(VersionComparator.isGreater("6.1.1", than: "6.1"))
-        #expect(!VersionComparator.isGreater("6.1", than: "6.1"))
-        #expect(!VersionComparator.isGreater("6.0.9", than: "6.1"))
+        let comparator = DefaultVersionComparator()
+        #expect(comparator.isGreater("6.24", than: "6.1"))
+        #expect(comparator.isGreater("6.1.1", than: "6.1"))
+        #expect(!comparator.isGreater("6.1", than: "6.1"))
+        #expect(!comparator.isGreater("6.0.9", than: "6.1"))
     }
 }

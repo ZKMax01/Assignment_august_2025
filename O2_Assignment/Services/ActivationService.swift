@@ -64,7 +64,9 @@ struct ActivationService: ActivationAPI {
             }
 
             let decoded = try JSONDecoder().decode(Response.self, from: data)
-            let isOk = VersionComparator.isGreater(decoded.ios, than: "6.1")
+            
+            let comparator: VersionComparing = DefaultVersionComparator()
+            let isOk = comparator.isGreater(decoded.ios, than: "6.1")
 
             #if DEBUG
             activationLog.debug("Decoded ios='\(decoded.ios, privacy: .public)' > 6.1 ? \(isOk, privacy: .public)")

@@ -56,9 +56,7 @@ struct MainView: View {
     }
 }
 
-#if DEBUG
 #Preview("Main") {
     MainView()
         .environmentObject(CardViewModel(service: PreviewActivationService()))
 }
-#endif

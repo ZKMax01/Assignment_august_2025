@@ -24,7 +24,8 @@ struct O2_AssignmentApp: App {
                 let delayNs: UInt64
                 func activate(using code: String) async throws -> Bool {
                     if delayNs > 0 { try await Task.sleep(nanoseconds: delayNs) }
-                    return VersionComparator.isGreater(remoteIOS, than: "6.1")
+                    let comparator: VersionComparing = DefaultVersionComparator()
+                    return comparator.isGreater(remoteIOS, than: "6.1")
                 }
             }
             
