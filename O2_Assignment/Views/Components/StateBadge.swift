@@ -8,11 +8,20 @@
 import SwiftUI
 
 struct StateBadge: View {
+    let state: CardState
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Label(state.displayText, systemImage: state.iconName)
+            .font(Font.system(size: 14, weight: .semibold))
+            .padding(.horizontal, 12)
+            .padding(.vertical, 6)
+            .background(state.tint.opacity(0.12))
+            .foregroundStyle(state.tint)
+            .clipShape(Capsule())
+            .accessibilityLabel(state.displayText)
+            .accessibilityIdentifier("state-text")
     }
 }
 
 #Preview {
-    StateBadge()
+    StateBadge(state: .scratching)
 }

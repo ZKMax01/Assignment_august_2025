@@ -1,5 +1,5 @@
 //
-//  ScratchCardState.swift
+//  CardState.swift
 //  O2_Assignment
 //
 //  Created by ZKMax01 on 13/08/2025.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum ScratchCardState: Equatable {
+enum CardState: Equatable {
     case unscratched
     case scratching
     case scratched(code: String)
@@ -15,14 +15,14 @@ enum ScratchCardState: Equatable {
     case activated(code: String)
 }
 
-extension ScratchCardState {
+extension CardState {
     var displayText: String {
         switch self {
         case .unscratched: return "Unscratched"
         case .scratching: return "Scratching…"
-        case .scratched(let code): return "Scratched"
+        case .scratched: return "Scratched"
         case .activating: return "Activating…"
-        case .activated(let code): return "Activated"
+        case .activated: return "Activated"
         }
     }
     
